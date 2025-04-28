@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Movies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #4CAF50;
+    }
+    button {
+      padding: 12px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Update Movies</h1>
+  <form action="/update/<%= book._id %>" method="POST">
+    <input type="text" name="title" value="<%= book.title %>" placeholder="Title" required>
+    <input type="text" name="author" value="<%= book.author %>" placeholder="Author" required>
+    <input type="text" name="image" value="<%= book.image %>" placeholder="Image URL" required>
+    <input type="number" name="year" value="<%= book.year %>" placeholder="Year" required>
+    <button type="submit">Update Movies</button>
+  </form>
+</body>
+</html>
